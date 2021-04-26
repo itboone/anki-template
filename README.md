@@ -1,8 +1,8 @@
 # anki-template
 
-anki模板分享
+*anki模板分享!*
 
-# 选择题模板
+## 选择题模板
 
 基础模板是anki的Cloze填空题模板
 
@@ -22,11 +22,11 @@ anki模板分享
 
 此处填写题目解析，点击显示答案按钮后会在题目下方显示。
 
-## 相关依赖
+### 相关依赖
 
 [SimonLammer/anki-persistence](https://github.com/SimonLammer/anki-persistence)
 
-## 测试版本
+### 测试版本
 
 桌面版：[Anki 2.1.43](https://github.com/ankitects/anki/releases/tag/2.1.43)
 
