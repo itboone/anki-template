@@ -1,2 +1,2 @@
-# anki-model
+# anki-template
 share some anki templates
