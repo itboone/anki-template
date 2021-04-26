@@ -1,6 +1,6 @@
 # anki-template
 
-*anki模板分享!*
+*Anki模板分享 !*
 
 ## 选择题模板
 
