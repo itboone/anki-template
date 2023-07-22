@@ -7,9 +7,11 @@
 	color: #fff;
 	background-color: #272822;
 }
+
 div {
 	margin:5px auto;
 }
+
 #score_board {
 	color:#fff;
 	font-style:italic;
@@ -18,6 +20,33 @@ div {
 	text-align:center;
 	margin-bottom:8px;
 }
+
+#is_random {
+	visibility: hidden;
+}
+
+#is_random + label {
+  //display: inline-block;
+	//vertical-align: middle;
+	width: 20px;
+ 	height: 20px;
+	zoom: 100%;
+	cursor: pointer;
+	border: 0px solid #ccc;
+	border-radius: 1px;
+	font-weight: 350;
+	background: none;
+}
+
+#is_random:checked + label:after {
+	//display: inline-block;
+	text-align: center;
+	content: " \2714";
+	color: rgba(234, 152, 54, 1);
+	font-weight: bold;
+	font-size: 12px;
+}
+
 #que_type {
 	color: #BA55D3;
 	font-weight: 700;
@@ -180,6 +209,7 @@ div {
 		this.total = 0;
 		this.score = 0;
 		this.rate =  0;
+		this.is_rnd = 0;
 		this.que_type = '';
 		this.question = '';
 		this.opt_strs = [];
@@ -365,9 +395,14 @@ div {
 			.filter(str => str != "");
 	}
 	
+	function set_rnd(){
+		subject.is_rnd = $("#is_random").prop('checked');
+	}
+
 	// 获取指定起始值和长度的不重复随机整数数组
 	function get_random_array(begin, len){
 		var arr = Array(len).fill(begin).map((e, i) => e + i);
+		if(!subject.is_rnd) return arr;
 		return arr.sort((a, b) => 0.5 - Math.random());
 	}
 
@@ -376,8 +411,9 @@ div {
 		if(subject.fin_ans.sort().join() == subject.ckd_ans.sort().join()){
 			subject.score ++;
 		}
+		$("#is_random").prop('checked', subject.is_rnd);
 		subject.rate = ((subject.score / subject.total) * 100).toFixed(2);
-		$('#score_board').html('[刷题数]：' + subject.total + '&nbsp&nbsp[得分]：' + 
+		$('#sc_detail').html('[刷题数]：' + subject.total + '&nbsp&nbsp[得分]：' + 
 			subject.score + '&nbsp&nbsp[准确率]：' + subject.rate + '%');
 	}
 
