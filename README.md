@@ -1,18 +1,10 @@
 # anki-template
 
-*Anki模板分享 !*
-
 ## 选择题模板
-
-### 版本更新
-
-* 2020.10.12 Anki选择题模板初始版本
-
-* 2021.04.25 修改桌面版切题时题目信息不刷新bug
 
 ### 模板信息
 
-基础模板是anki的Cloze填空题模板
+基础模板是anki的Cloze填空题模板，在卡片背面点击按钮'R'开启/关闭随机选项。
 
 **Question：题目信息**
 
@@ -37,6 +29,14 @@
 ### 相关依赖
 
 [SimonLammer/anki-persistence](https://github.com/SimonLammer/anki-persistence)
+
+### 版本更新
+
+* 2020.10.12 Anki选择题模板初始版本
+
+* 2021.04.25 修复桌面版切换题目刷新bug
+
+* 2023.07.22 增加开启/关闭随机选项按钮
 
 ### 测试版本
 
